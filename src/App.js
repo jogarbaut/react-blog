@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+// Components imports
+import Header from "./Header";
+import Nav from "./Nav";
+import Footer from "./Footer";
+import Home from "./Home";
+import NewPost from "./NewPost";
+import PostPage from "./PostPage";
+import EditPost from "./EditPost";
+import About from "./About";
+import Missing from "./Missing";
+
+// React-router-dom
+import { Route, Switch } from "react-router-dom";
+
+// Context (allows data to be provided to children components)
+import { DataProvider } from "./context/DataContext";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* DataProvider goes around all components so that data can be accessed (i.e. components can subscribe to DataProvider data) */}
+      <Header title="React JS Blog" />
+      <DataProvider>
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/post" component={NewPost} />
+          <Route path="/edit/:id" component={EditPost} />
+          <Route path="/post/:id" component={PostPage} />
+          <Route path="/about" component={About} />
+          <Route path="*" component={Missing} />
+        </Switch>
+      </DataProvider>
+      <Footer />
     </div>
   );
 }

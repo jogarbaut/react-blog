@@ -2,11 +2,11 @@
 import { useParams, Link, useHistory } from "react-router-dom";
 
 // Axios
-import api from "./api/posts";
+import api from "../api/posts";
 
 // Import context
 import { useContext } from "react";
-import DataContext from "./context/DataContext";
+import DataContext from "../context/DataContext";
 
 const PostPage = () => {
   const { posts, setPosts } = useContext(DataContext)

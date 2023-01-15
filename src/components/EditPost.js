@@ -2,10 +2,10 @@ import { useState, useEffect, useContext } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 
 // Import context
-import DataContext from "./context/DataContext";
+import DataContext from "../context/DataContext";
 
 // Axios
-import api from "./api/posts";
+import api from "../api/posts";
 
 // Date-fns package
 import { format } from "date-fns";

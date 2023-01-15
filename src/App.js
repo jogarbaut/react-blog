@@ -1,13 +1,13 @@
 // Components imports
-import Header from "./Header";
-import Nav from "./Nav";
-import Footer from "./Footer";
-import Home from "./Home";
-import NewPost from "./NewPost";
-import PostPage from "./PostPage";
-import EditPost from "./EditPost";
-import About from "./About";
-import Missing from "./Missing";
+import Header from "./components/Header";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import NewPost from "./components/NewPost";
+import PostPage from "./components/PostPage";
+import EditPost from "./components/EditPost";
+import About from "./components/About";
+import Missing from "./components/Missing";
 
 // React-router-dom
 import { Route, Switch } from "react-router-dom";
